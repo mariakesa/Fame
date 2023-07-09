@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.game-container {
+  width: 60%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.title-container {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 2em;
+  color: #444;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+.twit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.twits {
+  width: 60%;
+}
+
+.twits div {
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.score-container {
+  width: 20%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .twit-container {
+    flex-direction: column;
+  }
+
+  .logo,
+  .twits,
+  .score-container {
+    width: 100%;
+  }
+
+  .score-container {
+    margin-top: 20px;
+  }
+}
+
+.tweet-positive {
+  border: 2px solid pink;
+  padding: 10px; /* Optional, for a bit of space between border and text */
+}
+
+.tweet-negative {
+  border: 2px solid rgb(87, 217, 226);
+  padding: 10px; /* Optional, for a bit of space between border and text */
+}
+
+.added {
+  color: green;
+}
+
+.removed {
+  color: red;
+}
