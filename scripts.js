@@ -108,6 +108,40 @@ function updateScores(tweet) {
     .join(", ");
 }
 
+let celebritySpan = document.querySelector(".celebrities");
+
+celebritySpan.addEventListener("mouseenter", showCelebrityFollowersPopup);
+celebritySpan.addEventListener("mouseleave", hideCelebrityFollowersPopup);
+
+function showCelebrityFollowersPopup() {
+  const followersList = celebrityFollowers.slice(0, 200).join(", ");
+
+  const popup = document.createElement("div");
+  popup.className = "popup";
+  popup.textContent = followersList;
+
+  const celebritySpanRect = celebritySpan.getBoundingClientRect();
+  popup.style.cssText = `
+    position: absolute;
+    top: ${celebritySpanRect.bottom}px;
+    left: ${celebritySpanRect.left}px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  `;
+
+  document.body.appendChild(popup);
+}
+
+function hideCelebrityFollowersPopup() {
+  const popup = document.querySelector(".popup");
+  if (popup) {
+    document.body.removeChild(popup);
+  }
+}
+
 function getUniqueRandom(exclude, keys) {
   let random;
   do {
