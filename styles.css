@@ -105,3 +105,16 @@ body {
 .removed {
   color: red;
 }
+
+.im_popup {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  max-width: 300px; /* Set the maximum width of the popup */
+  width: auto; /* Allow the width to adjust based on content */
+  white-space: normal; /* Allow line breaks within the popup */
+}
